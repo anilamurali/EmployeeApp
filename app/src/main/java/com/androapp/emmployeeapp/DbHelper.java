@@ -2,6 +2,7 @@ package com.androapp.emmployeeapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -51,5 +52,14 @@ public class DbHelper extends SQLiteOpenHelper {
         else {
             return true;
         }
+    }
+    public Cursor searchEmployee(String empcode)
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        String query="select * from "+TableName+" where "+
+                col2+"="+"'"+empcode+"'";
+        Cursor c=db.rawQuery(query,null);
+        return c;
+
     }
 }
