@@ -33,6 +33,14 @@ public class AddemployeeActivity extends AppCompatActivity {
                 getname=ed2.getText().toString();
                 getdes=ed3.getText().toString();
                 getmob=ed4.getText().toString();
+                if (getmob.matches("^[6-9]\\d{9}$"))
+                {
+                    Toast.makeText(getApplicationContext(), "Valied moblie number ", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Inavlied", Toast.LENGTH_SHORT).show();
+                }
                 boolean status=mydb.insertEmployee(getcode,getname,getdes,getmob);
                 if (status==true)
                 {

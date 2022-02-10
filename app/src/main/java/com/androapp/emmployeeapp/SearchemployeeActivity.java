@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class SearchemployeeActivity extends AppCompatActivity {
     EditText ed1,ed2,ed3,ed4;
-    AppCompatButton b1;
+    AppCompatButton b1,b2;
     String getId,getName,getDes,getMob;
     DbHelper mydb;
 
@@ -24,6 +24,7 @@ public class SearchemployeeActivity extends AppCompatActivity {
         ed3=(EditText) findViewById(R.id.des);
         ed4=(EditText) findViewById(R.id.mob);
         b1=(AppCompatButton) findViewById(R.id.submit);
+        b2=(AppCompatButton) findViewById(R.id.delete);
         mydb=new DbHelper(this);
         mydb.getWritableDatabase();
         b1.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +48,12 @@ public class SearchemployeeActivity extends AppCompatActivity {
                     ed3.setText(getDes);
                     ed4.setText(getMob);
                 }
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

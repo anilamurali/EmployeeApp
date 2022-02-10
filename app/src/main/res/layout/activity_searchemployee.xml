@@ -45,5 +45,13 @@
         android:id="@+id/mob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:text="Delete"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonstyle2"
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

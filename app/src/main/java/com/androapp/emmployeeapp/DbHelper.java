@@ -62,4 +62,16 @@ public class DbHelper extends SQLiteOpenHelper {
         return c;
 
     }
+    public boolean deleteData(String eid){
+        SQLiteDatabase db=this.getWritableDatabase();
+        long status=db.delete(TableName,col1+"="+eid,null);
+        if (status==1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
